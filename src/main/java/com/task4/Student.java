@@ -1,8 +1,18 @@
-public class Student {
-    private String first;        // first name
-    private String last;         // last name
-    public Language language;     // language class
+package main.java.com.task4;
+/*
+ *  Student class for Task #4.
+ *
+ *  Student class creates a Student a object with given first name and language class.
+ *  This class is used in LanguageGroups class.
+ *
+ *  @version 1.0 10/16/2018
+ *  @author Polina Bochkareva
+ */
 
+public class Student {
+    private String first;           // first name
+    private String last;            // last name
+    public Language language;       // language class
 
     // construct a new student with given fields
     public Student(String first, String last, Language language) {
@@ -37,15 +47,8 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "first='" + first + '\'' +
-                ", last='" + last + '\'' +
-                ", language='" + language + '\'' +
+        return "Student{" + "first='" + first + '\'' + ", last='" + last + '\'' + ", language='" + language + '\'' +
                 '}';
-    }
-
-    enum Language {
-        ENGLISH, SPANISH
     }
 }
 
