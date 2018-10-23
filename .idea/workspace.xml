@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="726bea86-48d0-4c7b-b040-52f4cd68f674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/task1/Triangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/task1/TriangleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/task3/SCV_File.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/task4/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/in.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaCorePractice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaCorePractice.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/CollectionDifference.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/ContactList1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/LanguageGroups.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/SCV_File.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/Student$Language.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/Student.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/Triangle$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/Triangle$TriangleType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaCorePractice/Triangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CollectionDifference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/task2/CollectionDifference.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContactList1.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LanguageGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/task4/LanguageGroups.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SCV_File.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/task4/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Triangle.java" beforeDir="false" />
-    </list>
+    <list default="true" id="726bea86-48d0-4c7b-b040-52f4cd68f674" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +130,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="295" />
+    <option name="x" value="54" />
     <option name="y" value="23" />
     <option name="width" value="1145" />
     <option name="height" value="797" />
@@ -227,7 +204,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539744367160" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539744594506" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -321,10 +298,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="295" y="23" width="1145" height="797" extended-state="0" />
+    <frame x="54" y="23" width="1145" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2529465" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2529465" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -339,7 +316,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32918397" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" side_tool="true" visible="true" weight="0.32907802" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32890856" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.27349398" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
