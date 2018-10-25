@@ -1,5 +1,5 @@
 package main.java.com.task4;
-/*
+/**
  *  Language enum class for Task #4.
  *
  *  This class represents types of language classes that are used in LanguageGroups class

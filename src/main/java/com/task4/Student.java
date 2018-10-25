@@ -1,5 +1,5 @@
 package main.java.com.task4;
-/*
+/**
  *  Student class for Task #4.
  *
  *  Student class creates a Student a object with given first name and language class.
@@ -10,11 +10,11 @@ package main.java.com.task4;
  */
 
 public class Student {
-    private String first;           // first name
-    private String last;            // last name
-    public Language language;       // language class
+    private String first;
+    private String last;
+    public Language language;
 
-    // construct a new student with given fields
+    /** construct a new student with given fields */
     public Student(String first, String last, Language language) {
         this.first = first;
         this.last = last;

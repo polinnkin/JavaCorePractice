@@ -4,7 +4,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-/*
+/**
  *  Triangle class for Task #2.
  *
  *  This program finds the uncommon elements from two Collections
@@ -14,14 +14,18 @@ import java.util.Collection;
  */
 
 public class CollectionDifference {
-
+    /**
+     * This is the main method which makes use of diff method.
+     * @param args Unused.
+     * @return Nothing.
+     */
     public static void main(String[] args) {
-        // create lists
+        /** create lists */
         Collection<Character> list1 = new ArrayList<>();
         Collection<Character> list2 = new ArrayList<>();
         Collection<Character> listDiff ;
 
-        // add elements to the lists
+        /** add elements to the lists */
         list1.add('a');
         list1.add('b');
         list1.add('v');
@@ -34,12 +38,16 @@ public class CollectionDifference {
         list2.add('d');
         list2.add('e');
 
-        // get uncommon elements
+        /** get uncommon elements */
         listDiff =  diff(list1, list2);
         System.out.println(Arrays.toString(listDiff.toArray()));
     }
-
-    // diff method returns uncommon elements from two Collections
+    /**
+     * This method is used to return uncommon elements from two Collections
+     * @param a This is the first parameter to diff method
+     * @param b  This is the second parameter to diff method
+     * @return TriangleType This returns Collection<Character> object
+     */
     private static Collection<Character> diff(Collection<Character> a, Collection<Character> b) {
         Collection<Character> listDiff = CollectionUtils.disjunction(a, b);
         return listDiff;

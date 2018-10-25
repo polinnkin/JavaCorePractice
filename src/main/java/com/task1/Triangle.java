@@ -2,7 +2,7 @@ package main.java.com.task1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-/*
+/**
  *  Triangle class for Task #1.
  *
  *  This program ask an user to enter 3 side lengths for triangle
@@ -13,11 +13,15 @@ import java.util.Scanner;
  */
 
 public class Triangle {
-
+    /**
+     * This is the main method which makes use of classify method.
+     * @param args Unused.
+     * @return Nothing.
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         try {
-            // Ask a user for 3 dimensions of triangle
+            /** Ask a user for 3 dimensions of triangle */
             System.out.println("Enter side1 length: ");
             int a = sc.nextInt();
             System.out.println("Enter side2 length: ");
@@ -25,7 +29,7 @@ public class Triangle {
             System.out.println("Enter side3 length: ");
             int c = sc.nextInt();
 
-            // Print the triangle type
+            /** Print the triangle type */
             TriangleType result = classify(a, b, c);
             System.out.print("Triangle is " + result);
         }
@@ -33,8 +37,13 @@ public class Triangle {
             System.out.println("Error - a side length should be an integer.");
         }
     }
-
-    // This method returns a type of triangle
+    /**
+     * This method is used to return a type of triangle depending on lengths of 3 sides
+     * @param a This is the first parameter to classify method
+     * @param b  This is the second parameter to classify method
+     * @param c  This is the third parameter to classify method
+     * @return TriangleType This returns TriangleType enum type
+     */
     private static TriangleType classify(int a, int b, int c) {
         double diff = a * a + b * b - c * c;
         if (a <= 0 || b <= 0 || c <= 0) {

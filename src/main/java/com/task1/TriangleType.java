@@ -1,5 +1,5 @@
 package main.java.com.task1;
-/*
+/**
  *  TriangleType class for Task #1.
  *
  *  This class defines types of triangles.
