@@ -7,12 +7,12 @@
       <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="10.0 (1)" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/Java/jars/commons-collections4-4.0.jar!/" />
+          <root url="jar://$USER_HOME$/software/Java frameworks/commons-collections4-4.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
