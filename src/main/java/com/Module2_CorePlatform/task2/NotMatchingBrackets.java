@@ -1,11 +1,12 @@
 package main.java.com.Module2_CorePlatform.task2;
+
 /**
- *  NotMatchingBrackets class for Task #2.
+ * NotMatchingBrackets class for Task #2.
+ * <p>
+ * This class defines NotMatchingBrackets Exception which is used in BracketsCombination class.
  *
- *  This class defines NotMatchingBrackets Exception which is used in BracketsCombination class.
- *
- *  @version 1.0 10/31/2018
- *  @author Polina Bochkareva
+ * @author Polina Bochkareva
+ * @version 1.0 10/31/2018
  */
 public class NotMatchingBrackets extends Exception {
 
