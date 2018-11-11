@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * Palindrome class for Task #1.
- * <p>
+ *
  * This program asks an user to enter a string
  * and checks if the string is Palindrome or not.
  *
