@@ -1,17 +1,16 @@
 package main.java.com.Module1_JavaLanguage.task4;
 /**
- *  LanguageGroups class for Task #4.
+ * LanguageGroups class for Task #4.
+ * <p>
+ * There is a list of students where each student has a first name, last name and studying language.
+ * This program divides the list of students into groups of 5 people by studying language.
  *
- *  There is a list of students where each student has a first name, last name and studying language.
- *  This program divides the list of students into groups of 5 people by studying language.
- *
- *  @version 1.1 10/16/2018
- *  @author Polina Bochkareva
+ * @version 2.0 11/10/2018
+ * @author Polina Bochkareva
  */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class LanguageGroups {
     /**
@@ -35,7 +34,7 @@ public class LanguageGroups {
         Student st11 = new Student("Carl", "Je", Language.ENGLISH);
         Student st12 = new Student("Sir", "Le", Language.SPANISH);
 
-        /** add students to arrayList */
+        /** Add students to arrayList */
         ArrayList<Student> allStudents = new ArrayList<Student>();
 
         allStudents.add(st1);
@@ -56,10 +55,9 @@ public class LanguageGroups {
         int countSpan = 0;
 
         for (int i = 0; i < allStudents.size(); i++) {
-            if(allStudents.get(i).getLanguage() == Language.ENGLISH){
+            if (allStudents.get(i).getLanguage() == Language.ENGLISH) {
                 countEng++;
-            }
-            else countSpan++;
+            } else countSpan++;
         }
 
         /** Count how many groups of 5 is going to be. */
@@ -69,13 +67,13 @@ public class LanguageGroups {
         /** Create groups for ENGLISH class */
         HashMap<String, ArrayList<Student>> engMap = new HashMap<>();
         for (int i = 0; i < countEngGroup; i++) {
-            engMap.put("Group" + (i+1), new ArrayList<Student>());
+            engMap.put("Group" + (i + 1), new ArrayList<Student>());
         }
 
         /** Create groups for SPANISH class */
         HashMap<String, ArrayList<Student>> spanMap = new HashMap<>();
         for (int i = 0; i < countSpanGroup; i++) {
-            spanMap.put("Group" + (i+1), new ArrayList<Student>());
+            spanMap.put("Group" + (i + 1), new ArrayList<Student>());
         }
 
         /** Track current group number */
@@ -101,21 +99,23 @@ public class LanguageGroups {
         printResult(engMap, Language.ENGLISH);
         printResult(spanMap, Language.SPANISH);
     }
+
     /**
      * This method is used to divides students on group of 5 and return a number of groups
      * @param numOfStudents This is the first parameter to div method
      * @return int This returns numbers of groups of 5 depending on a number of students
      */
-    private static int div(int numOfStudents){
+    private static int div(int numOfStudents) {
         int result;
-        if(numOfStudents > 0 && numOfStudents < 5)
+        if (numOfStudents > 0 && numOfStudents < 5)
             result = 1;
-        else if (numOfStudents  %  5 > 0 )
+        else if (numOfStudents % 5 > 0)
             result = numOfStudents / 5 + 1;
         else
             result = numOfStudents / 5;
         return result;
     }
+
     /**
      * This method is used to print the list of students by studying language
      * where the list is divided into groups of 5 students.
@@ -123,22 +123,34 @@ public class LanguageGroups {
      * @param lang This is the second parameter to printResult method
      * @return Nothing.
      */
-    private static void printResult(HashMap <String, ArrayList<Student>> map, Language lang){
+    private static void printResult(HashMap<String, ArrayList<Student>> map, Language lang) {
         System.out.println("List of groups for " + lang + " class:");
         for (Map.Entry<String, ArrayList<Student>> entry : map.entrySet()) {
-            System.out.println(entry.getKey()+ ":");
+            System.out.println(entry.getKey() + ":");
             printArrayList(entry.getValue());
         }
         System.out.println("***************");
     }
+
     /**
      * This method is used to print ArrayList
-     * @param list This is the first parameter to printArrayList method
+     * @param studentList This is the first parameter to printArrayList method
      * @return Nothing.
      */
-    private static void printArrayList(ArrayList<Student> list){
-        for(Student student : list) {
-            System.out.println(student.getFirst() + " " + student.getLast());
+    private static void printArrayList(List<Student> studentList) {
+        studentList = sortStudents(studentList);
+        for (Student student : studentList) {
+            System.out.println(student.getFirstName() + " " + student.getLastName());
         }
+    }
+
+    /**
+     * This method sort an object of List<Student> by last name and first name of students in alphabetical order
+     * @param studentList This is the first parameter to printArrayList method
+     * @return List<Student> Sorted list of students
+     */
+    private static List<Student> sortStudents(List<Student> studentList) {
+        return studentList.stream().sorted(Comparator.comparing(Student::getLastName).
+                thenComparing(Student::getFirstName)).collect(Collectors.toList());
     }
 }

@@ -1,39 +1,42 @@
 package main.java.com.Module1_JavaLanguage.task4;
+
 /**
- *  Student class for Task #4.
+ * Student class for Task #4.
+ * <p>
+ * Student class creates a Student a object with given first name and language class.
+ * This class is used in LanguageGroups class.
  *
- *  Student class creates a Student a object with given first name and language class.
- *  This class is used in LanguageGroups class.
- *
- *  @version 1.0 10/16/2018
- *  @author Polina Bochkareva
+ * @author Polina Bochkareva
+ * @version 1.0 10/16/2018
  */
 
 public class Student {
+    public Language language;
     private String first;
     private String last;
-    public Language language;
 
-    /** construct a new student with given fields */
+    /**
+     * construct a new student with given fields
+     */
     public Student(String first, String last, Language language) {
         this.first = first;
         this.last = last;
         this.language = language;
     }
 
-    public String getFirst() {
+    public String getFirstName() {
         return first;
     }
 
-    public void setFirst(String first) {
+    public void setFirstName(String first) {
         this.first = first;
     }
 
-    public String getLast() {
+    public String getLastName() {
         return last;
     }
 
-    public void setLast(String last) {
+    public void setLastName(String last) {
         this.last = last;
     }
 
