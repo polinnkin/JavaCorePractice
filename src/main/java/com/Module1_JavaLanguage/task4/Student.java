@@ -11,13 +11,11 @@ package main.java.com.Module1_JavaLanguage.task4;
  */
 
 public class Student {
-    public Language language;
+    private Language language;
     private String first;
     private String last;
 
-    /**
-     * construct a new student with given fields
-     */
+    //construct a new student with given fields
     public Student(String first, String last, Language language) {
         this.first = first;
         this.last = last;

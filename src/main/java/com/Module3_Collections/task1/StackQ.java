@@ -38,10 +38,10 @@ public class StackQ {
      * @param item the item to add
      */
     public void push(int item) {
-        /** Get size of queue */
+        // Get size of queue
         int size = queue.size();
 
-        /** Add current element */
+        // Add current element
         queue.add(item);
 
         // Pop all previous elements and put them after the current element

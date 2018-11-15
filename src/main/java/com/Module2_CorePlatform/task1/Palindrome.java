@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 /**
  * Palindrome class for Task #1.
- *
+ * <p>
  * This program asks an user to enter a string
  * and checks if the string is Palindrome or not.
  *
@@ -18,16 +18,13 @@ public class Palindrome {
      * This is the main method which makes use of checkPalindrome method.
      *
      * @param args Unused.
-     * @return Nothing.
      */
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in).useDelimiter("\\n");
-        try {
-            //* Ask a user to enter a string */
+        try (Scanner sc = new Scanner(System.in).useDelimiter("\\n")) {
+            // Ask a user to enter a string
             System.out.println("Enter a string to check palindrome: ");
             String s = sc.next();
             s = removeAllPunctuationAndSpace(s);
-            System.out.println(s);
             if (checkPalindrome(s)) {
                 System.out.println("The string is palindrome");
             } else {
@@ -45,14 +42,10 @@ public class Palindrome {
      * @return boolean This returns true if a string is palindrome or false if not
      */
     private static boolean checkPalindrome(String s) {
-        boolean isPalindrome = false;
-        /** reverse the given String */
+        // reverse the given String
         String reverse = new StringBuffer(s).reverse().toString();
-        /** check whether the string is palindrome or not */
-        if (s.equalsIgnoreCase(reverse)) {
-            isPalindrome = true;
-        }
-        return isPalindrome;
+        // check whether the string is palindrome or not
+        return s.equalsIgnoreCase(reverse);
     }
 
     /**
@@ -62,8 +55,7 @@ public class Palindrome {
      * @return String This returns String without any punctuation or space
      */
     private static String removeAllPunctuationAndSpace(String s) {
-        s = s.replaceAll("\\p{Punct}", "");
-        s = s.replaceAll("\\s+", "");
+        s = s.replaceAll("[^A-Za-z]+", "");
         return s;
     }
 }

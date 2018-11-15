@@ -20,15 +20,13 @@ public class BracketsCombination {
      * This is the main method which makes use of CheckBrackets method.
      *
      * @param args Unused.
-     * @return Nothing.
      */
     public static void main(String[] args) throws NotMatchingBrackets {
-        Scanner sc = new Scanner(System.in).useDelimiter("\\n");
-        try {
-            //** Ask a user to enter a string *//*
+        try (Scanner sc = new Scanner(System.in).useDelimiter("\\n")) {
+            // Ask a user to enter a string
             System.out.println("Enter a string:");
             String str = sc.next();
-            if (CheckBrackets(str)) {
+            if (checkBrackets(str)) {
                 System.out.println("The string contains matching pairs of brackets");
             } else {
                 throw new NotMatchingBrackets();
@@ -44,7 +42,7 @@ public class BracketsCombination {
      * @param str This is the first parameter to CheckBrackets method
      * @return boolean This returns true if a string contains matching pairs of brackets or false if not
      */
-    private static boolean CheckBrackets(String str) {
+    private static boolean checkBrackets(String str) {
         if (str.isEmpty()) {
             return true;
         }

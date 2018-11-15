@@ -8,9 +8,9 @@ package main.java.com.Module2_CorePlatform.task2;
  * @author Polina Bochkareva
  * @version 1.0 10/31/2018
  */
-public class NotMatchingBrackets extends Exception {
+class NotMatchingBrackets extends Exception {
 
-    public NotMatchingBrackets() {
+    NotMatchingBrackets() {
         System.out.println("The string contains not matching pairs of brackets");
     }
 }
