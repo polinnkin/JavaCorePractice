@@ -46,9 +46,9 @@ public class Triangle {
      * @param c This is the third parameter to classify method
      * @return TriangleType This returns TriangleType enum type
      */
-    private static TriangleType classify(int a, int b, int c) {
+    public static TriangleType classify(int a, int b, int c) {
         double diff = a * a + b * b - c * c;
-        if (a <= 0 || b <= 0 || c <= 0) {
+        if ( (a <= 0 || b <= 0 || c <= 0)  ) {
             return TriangleType.INVALID;
         }
         if (a == b && b == c) {

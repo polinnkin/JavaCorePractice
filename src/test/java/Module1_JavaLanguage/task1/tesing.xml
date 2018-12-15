@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestAll">
+
+    <test name="order">
+        <classes>
+            <class name="test.java.Module1_JavaLanguage.task1.TriangleTest" />
+        </classes>
+    </test>
+
+</suite>
