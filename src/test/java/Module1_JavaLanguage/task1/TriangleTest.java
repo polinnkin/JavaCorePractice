@@ -7,15 +7,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import java.util.Scanner;
 
 import static org.testng.Assert.*;
 
 public class TriangleTest {
     private Triangle triangle;
-    TriangleType result;
+    private TriangleType result;
 
-    private Scanner sc;
 
     @BeforeMethod
     public void setUp() {
@@ -38,16 +36,22 @@ public class TriangleTest {
         assertEquals(result, TriangleType.RIGHT);
     }
 
-    @Test
-    public void testAcutePass() {
+    @Test(dataProvider = "testAcuteDataProvider")
+    public void testAcutePass(int a, int b, int c) {
+        result = Triangle.classify(a, b, c);
+        assertEquals(result, TriangleType.ACUTE);
     }
 
-    @Test
-    public void testAcuteFail() {
+    @Test(dataProvider = "testObtuseDataProvider")
+    public void testObtusePass(int a, int b, int c) {
+        result = Triangle.classify(a, b, c);
+        assertEquals(result, TriangleType.OBTUSE);
     }
 
-    @Test
-    public void testInvalidPass() {
+    @Test(dataProvider = "testInvalidDataProvider")
+    public void testInvalidPass(int a, int b, int c) {
+        result = Triangle.classify(a, b, c);
+        assertEquals(result, TriangleType.INVALID);
     }
 
     @DataProvider(name = "testEquilateralDataProvider")
@@ -61,7 +65,28 @@ public class TriangleTest {
     @DataProvider(name = "testRightDataProvider")
     public Object[][] testRightDataProvider() {
         return new Object[][]{
-                {3, (int)((Math.pow(3, 2) - 1)/2), (int)(Math.pow(3, 2) + 1)/2}
+                {3, (int)((Math.pow(3, 2) - 1)/2), (int)(Math.pow(3, 2) + 1)/2},
+        };
+    }
+
+    @DataProvider(name = "testAcuteDataProvider")
+    public Object[][] testAcuteDataProvider() {
+        return new Object[][]{
+                {3, 5, 7},
+        };
+    }
+
+    @DataProvider(name = "testObtuseDataProvider")
+    public Object[][] testObtuseDataProvider() {
+        return new Object[][]{
+                {3, 5, 7},
+        };
+    }
+
+    @DataProvider(name = "testInvalidDataProvider")
+    public Object[][] testInvalidDataProvider() {
+        return new Object[][]{
+                {0, 0, 0},
         };
     }
 }
