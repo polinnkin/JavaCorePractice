@@ -4,7 +4,11 @@
 
     <test name="order">
         <classes>
-            <class name="test.java.Module1_JavaLanguage.task1.TriangleTest" />
+            <class name="test.java.Module1_JavaLanguage.task1.TriangleTestEquilateral" />
+            <class name="test.java.Module1_JavaLanguage.task1.TriangleTestInvalid" />
+            <class name="test.java.Module1_JavaLanguage.task1.TriangleTestObtuse" />
+            <class name="test.java.Module1_JavaLanguage.task1.TriangleTestRight" />
+            <class name="test.java.Module1_JavaLanguage.task1.TriangleTestAcute" />
         </classes>
     </test>
 
