@@ -32,7 +32,7 @@ public class Triangle {
 
             // Print the triangle type
             TriangleType result = classify(a, b, c);
-            System.out.print("Triangle is " + result);
+            System.out.println("Triangle is " + result);
         } catch (InputMismatchException exception) {
             System.out.println("Error - a side length should be an integer.");
         }
@@ -65,4 +65,5 @@ public class Triangle {
         }
         return TriangleType.OBTUSE;
     }
+
 }
