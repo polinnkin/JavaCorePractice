@@ -48,7 +48,7 @@ public class Triangle {
      */
     public static TriangleType classify(int a, int b, int c) {
         double diff = a * a + b * b - c * c;
-        if ( (a <= 0 || b <= 0 || c <= 0)  ) {
+        if ((a <= 0 || b <= 0 || c <= 0)) {
             return TriangleType.INVALID;
         }
         if (a == b && b == c) {
@@ -65,5 +65,4 @@ public class Triangle {
         }
         return TriangleType.OBTUSE;
     }
-
 }
