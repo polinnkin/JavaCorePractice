@@ -104,7 +104,3 @@ Temporary Items
 
 # sftp configuration file
 sftp-config.json.DS_Store
-
-#
-.gitattributes
-JavaCorePractice.iml
