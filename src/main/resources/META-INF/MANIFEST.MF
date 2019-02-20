@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: bsh-2.0b6.jar commons-collections4-4.0.jar commons-collect
+ ions4-4.0.jar jcommander-1.72.jar testng-6.14.3.jar testng-6.14.3.jar
+Main-Class: 
+
