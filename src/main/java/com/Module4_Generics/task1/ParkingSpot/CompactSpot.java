@@ -1,4 +1,4 @@
-package main.java.com.Module4_Generics.task1.ParkingSpot;
+package com.Module4_Generics.task1.ParkingSpot;
 
 public class CompactSpot extends ParkingSpot {
     public CompactSpot() {

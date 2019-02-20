@@ -1,4 +1,4 @@
-package main.java.com.Module1_JavaLanguage.task2;
+package com.Module1_JavaLanguage.task2;
 
 import org.apache.commons.collections4.CollectionUtils;
 

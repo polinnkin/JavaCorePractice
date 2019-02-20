@@ -1,4 +1,4 @@
-package main.java.com.Module2_CorePlatform.task3;
+package com.Module2_CorePlatform.task3;
 
 import java.io.*;
 import java.util.HashSet;

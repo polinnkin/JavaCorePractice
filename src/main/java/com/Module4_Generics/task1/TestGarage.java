@@ -1,8 +1,7 @@
-package main.java.com.Module4_Generics.task1;
+package com.Module4_Generics.task1;
 
-
-import main.java.com.Module4_Generics.task1.Vehicle.Car;
-import main.java.com.Module4_Generics.task1.Vehicle.Van;
+import com.Module4_Generics.task1.Vehicle.Car;
+import com.Module4_Generics.task1.Vehicle.Van;
 
 public class TestGarage {
     public static void main(String[] args) {

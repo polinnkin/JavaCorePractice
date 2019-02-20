@@ -1,4 +1,4 @@
-package main.java.com.Module1_JavaLanguage.task4;
+package com.Module1_JavaLanguage.task4;
 
 /**
  * Student class for Task #4.

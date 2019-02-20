@@ -1,4 +1,4 @@
-package main.java.com.Module1_JavaLanguage.task4;
+package com.Module1_JavaLanguage.task4;
 /**
  * LanguageGroups class for Task #4.
  * <p>

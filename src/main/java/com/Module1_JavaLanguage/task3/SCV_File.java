@@ -1,4 +1,4 @@
-package main.java.com.Module1_JavaLanguage.task3;
+package com.Module1_JavaLanguage.task3;
 
 import java.io.*;
 

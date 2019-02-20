@@ -1,4 +1,4 @@
-package main.java.com.Module3_Collections.task1;
+package com.Module3_Collections.task1;
 
 /******************************************************************************
  *  Compilation:  javac Queue.java

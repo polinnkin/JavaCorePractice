@@ -1,7 +1,7 @@
-package test.java.Module1_JavaLanguage.task1;
+package Module1_JavaLanguage.task1;
 
-import main.java.com.Module1_JavaLanguage.task1.Triangle;
-import main.java.com.Module1_JavaLanguage.task1.TriangleType;
+import com.Module1_JavaLanguage.task1.Triangle;
+import com.Module1_JavaLanguage.task1.TriangleType;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

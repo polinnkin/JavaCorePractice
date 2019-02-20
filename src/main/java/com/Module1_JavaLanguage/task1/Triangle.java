@@ -1,4 +1,4 @@
-package main.java.com.Module1_JavaLanguage.task1;
+package com.Module1_JavaLanguage.task1;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

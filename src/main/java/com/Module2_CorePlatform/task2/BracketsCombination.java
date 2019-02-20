@@ -1,4 +1,4 @@
-package main.java.com.Module2_CorePlatform.task2;
+package com.Module2_CorePlatform.task2;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

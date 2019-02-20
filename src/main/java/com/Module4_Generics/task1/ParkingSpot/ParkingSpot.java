@@ -1,6 +1,6 @@
-package main.java.com.Module4_Generics.task1.ParkingSpot;
+package com.Module4_Generics.task1.ParkingSpot;
 
-import main.java.com.Module4_Generics.task1.Vehicle.Vehicle;
+import com.Module4_Generics.task1.Vehicle.Vehicle;
 
 public abstract class ParkingSpot {
 
