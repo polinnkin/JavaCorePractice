@@ -7,20 +7,22 @@ package com.Module4_Generics.task1;
  *
  * @author Polina Bochkareva
  */
+
 import com.Module4_Generics.task1.ParkingSpot.BicycleSpot;
 import com.Module4_Generics.task1.ParkingSpot.CompactSpot;
 import com.Module4_Generics.task1.ParkingSpot.MotorcycleSpot;
 import com.Module4_Generics.task1.ParkingSpot.ParkingSpot;
 import com.Module4_Generics.task1.Vehicle.*;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 
-public class Garage {
+public class test {
 
     // max numbers of parking spots for different vehicle types
     public static final int MAX_COMPACT_COUNT = 3;
-    public static int MAX_MOTORCYCLE_COUNT = 5;
-    public static int MAX_BICYCLE_COUNT = 5;
+    public static int MAX_MOTORCYCLE_COUNT = 3;
+    public static int MAX_BICYCLE_COUNT = 3;
 
     // maps where currently parked vehicles are stored
     private HashMap<BicycleSpot, Bicycle> bicycleMap = new HashMap<>();
@@ -60,64 +62,35 @@ public class Garage {
     }
 
     /**
-     * This method adds allowed types of vehicles (CAR, MOTORCYCLE, BICYCLE) in the garage.
+     * This method added only allowed types of vehicles (CAR, MOTORCYCLE, BICYCLE) in the garage using
+     * addVehicle() method.
      *
      * @param vehicle This is the first parameter to addVehicle method
      * @return boolean This returns true if the vehicle was successfully added to the garage and false otherwise
      */
-    public boolean addVehicle(Vehicle vehicle) {
-        boolean isAdded = false;
+    public boolean parkVehicle(Vehicle vehicle) {
+        boolean isParked = false;
         if (vehicle.getType() == VehicleType.VAN || vehicle.getType() == VehicleType.TRUCK) {
             System.out.println("Couldn't add the vehicle. TRUCKS and VANS are too large to enter the garage!");
         } else if (vehicle.getType() == VehicleType.CAR) {
-            if (carMap.containsValue(vehicle)) {
-                System.out.println("Couldn't add the vehicle. This vehicle already parked at the " +
-                        getSpotByVehicle(carMap, (Car) vehicle) + " spot.");
-            } else {
-                if (compactSpotCount < MAX_COMPACT_COUNT) {
-                    CompactSpot spot = new CompactSpot();
-                    spot.assignVehicle(vehicle);
-                    carMap.put(spot, (Car) vehicle);
-                    compactSpotCount++;
-                    System.out.println("Successfully added a vehicle to a COMPACT spot.");
-                    isAdded = true;
-                } else {
-                    System.out.println("Couldn't add the vehicle. There is no available COMPACT spot in the garage.");
-                }
+            isParked = addVehicle(carMap, (Car) vehicle, compactSpotCount, CompactSpot.class, MAX_COMPACT_COUNT);
+            if (isParked) {
+                compactSpotCount++;
             }
         } else if (vehicle.getType() == VehicleType.MOTORCYCLE) {
-            if (motorcycleMap.containsValue(vehicle)) {
-                System.out.println("Couldn't add the vehicle. This vehicle already parked at the " +
-                        getSpotByVehicle(motorcycleMap, (Motorcycle) vehicle) + " spot.");
-            } else {
-                if (motorcycleSpotCount < MAX_MOTORCYCLE_COUNT) {
-                    MotorcycleSpot spot = new MotorcycleSpot();
-                    spot.assignVehicle(vehicle);
-                    motorcycleMap.put(spot, (Motorcycle) vehicle);
-                    motorcycleSpotCount++;
-                    System.out.println("Successfully added a vehicle to a MOTORCYCLE spot.");
-                    isAdded = true;
-                } else {
-                    System.out.println("Couldn't add the vehicle. There is no available MOTORCYCLE spot in the garage.");
-                }
+            isParked = addVehicle(motorcycleMap, (Motorcycle) vehicle, motorcycleSpotCount, MotorcycleSpot.class,
+                    MAX_MOTORCYCLE_COUNT);
+            if (isParked) {
+                motorcycleSpotCount++;
             }
         } else if (vehicle.getType() == VehicleType.BICYCLE) {
-            if (bicycleMap.containsValue(vehicle)) {
-                System.out.println("Couldn't add the vehicle. This vehicle already parked at the BICYCLE spot.");
-            } else {
-                if (bicycleSpotCount < MAX_BICYCLE_COUNT) {
-                    BicycleSpot spot = new BicycleSpot();
-                    spot.assignVehicle(vehicle);
-                    bicycleMap.put(spot, (Bicycle) vehicle);
-                    bicycleSpotCount++;
-                    System.out.println("Successfully added a vehicle to a BICYCLE spot.");
-                    isAdded = true;
-                } else {
-                    System.out.println("Couldn't add the vehicle. There is no available BICYCLE spot in the garage.");
-                }
+            isParked = addVehicle(bicycleMap, (Bicycle) vehicle, bicycleSpotCount, BicycleSpot.class,
+                    MAX_BICYCLE_COUNT);
+            if (isParked) {
+                bicycleSpotCount++;
             }
         }
-        return isAdded;
+        return isParked;
     }
 
     /**
@@ -171,16 +144,15 @@ public class Garage {
      * and false otherwise
      */
     public boolean isFull(VehicleType type) {
-        // motorbikes can only be parked at motorbike spots
         if (type == VehicleType.MOTORCYCLE) {
             return motorcycleSpotCount >= MAX_MOTORCYCLE_COUNT;
-        }
-
-        // cars can be parked at compact or large spots
-        else if (type == VehicleType.CAR) {
+        } else if (type == VehicleType.CAR) {
             return compactSpotCount >= MAX_COMPACT_COUNT;
-        } else {
+        } else if (type == VehicleType.BICYCLE) {
             return bicycleSpotCount >= MAX_BICYCLE_COUNT;
+        } else {
+            System.out.println("This vehicle type can't be parked in the garage anytime");
+            return false;
         }
     }
 
@@ -192,7 +164,7 @@ public class Garage {
      * @return ParkingSpot This returns a Parking Spot fo a specified vehicle
      * and false otherwise
      */
-    private <S extends ParkingSpot, V extends Vehicle> S getSpotByVehicle(HashMap<S, V> map, V vehicle) {
+    public <S extends ParkingSpot, V extends Vehicle> S getSpotByVehicle(HashMap<S, V> map, V vehicle) {
         for (S o : map.keySet()) {
             if (map.get(o).equals(vehicle)) {
                 return o;
@@ -200,4 +172,74 @@ public class Garage {
         }
         return null;
     }
+
+    /**
+     * This is a helper method for parkVehicle() method. This method add any type of vehicle in the garage if there is
+     * a space available for this type of Vehicle.
+     *
+     * @param map          This is the first parameter to addVehicle method
+     * @param vehicle      This is the second parameter to addVehicle method
+     * @param currentCount This is the third parameter to addVehicle method
+     * @param spotClass    This is the fourth parameter to addVehicle method
+     * @param maxCount     This is the fifth parameter to addVehicle method
+     * @return boolean This returns true if the vehicle was successfully added to the garage and false otherwise
+     */
+    public <S extends ParkingSpot, V extends Vehicle> boolean addVehicle(HashMap<S, V> map, V vehicle, int currentCount,
+                                                                         Class<S> spotClass, int maxCount) {
+        boolean isAdded = false;
+        if (map.containsValue(vehicle)) {
+            System.out.println("Couldn't add the vehicle. This vehicle already parked at the " +
+                    getSpotByVehicle(map, vehicle) + " spot.");
+        } else {
+            if (currentCount < maxCount) {
+                try {
+                    S spot = spotClass.getConstructor().newInstance();
+                    spot.assignVehicle(vehicle);
+                    map.put(spot, vehicle);
+                    System.out.println("Successfully added a " + vehicle.getType() + " to a " + spot.toString() + " spot.");
+                    isAdded = true;
+                } catch (InstantiationException e) {
+                    e.printStackTrace();
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                } catch (NoSuchMethodException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                System.out.println("Couldn't add the " + vehicle.getType() + ". There is no available " +
+                        spotClass.getSimpleName() + " in the garage.");
+            }
+        }
+        return isAdded;
+    }
+
+    /**
+     * This is a helper method for exitGarage() method. This method add any type of vehicle in the garage if there is
+     * a space available for this type of Vehicle.
+     *
+     * @param map          This is the first parameter to addVehicle method
+     * @param vehicle      This is the second parameter to addVehicle method
+     * @param currentCount This is the third parameter to addVehicle method
+     * @param spotClass    This is the fourth parameter to addVehicle method
+     * @param maxCount     This is the fifth parameter to addVehicle method
+     * @return boolean This returns true if the vehicle was successfully added to the garage and false otherwise
+     */
+    public <S extends ParkingSpot, V extends Vehicle> boolean removeVehicle(HashMap<S, V> map, V vehicle, int currentCount,
+                                                                            Class<S> spotClass, int maxCount) {
+        boolean isRemoved = false;
+        if (map.containsValue(vehicle)) {
+      //      getSpotByVehicle(map, (vehicle).removeVehicle();
+            carMap.remove(getSpotByVehicle(carMap, (Car) vehicle));
+            compactSpotCount--;
+            isRemoved = true;
+            System.out.println("Removed this compact vehicle in the garage.");
+        } else {
+            System.out.println("Couldn't find this compact vehicle in the garage.");
+        }
+        return isRemoved;
+    }
+
 }
+

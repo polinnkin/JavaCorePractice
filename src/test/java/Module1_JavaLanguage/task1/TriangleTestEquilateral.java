@@ -20,7 +20,7 @@ public class TriangleTestEquilateral {
     private TriangleType result;
 
     /**
-     * This method checks is triangle is EQUILATERAL depending on lengths of 3 sides
+     * This method checks is triangle is EQUILATERA L depending on lengths of 3 sides
      *
      * @param a This is the first parameter to testEquilateralPass method
      * @param b This is the second parameter to testEquilateralPass method

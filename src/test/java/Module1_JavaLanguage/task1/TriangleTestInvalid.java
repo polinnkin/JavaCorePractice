@@ -45,5 +45,4 @@ public class TriangleTestInvalid {
                 {10, 100, 1}
         };
     }
-
 }
