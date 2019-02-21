@@ -1,7 +1,7 @@
 package com.Module4_Generics.task1;
 
 /**
- * This program a test program for Garage class
+ * This program a test program for Garage class.
  *
  * @author Polina Bochkareva
  */
